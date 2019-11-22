@@ -25,19 +25,19 @@ Smalltalk::~Smalltalk(void) {
 
 }
 
-std::string saySomething() {
+std::string Smalltalk::saySomething() {
 	return "Hello";
 }
 
-std::string getTime() {
+std::string Smalltalk::getTime() {
 	return "Time to get a watch";
 }
 
-std::unique_ptr<Watch>  takeWatch() {
+std::unique_ptr<Watch>  Smalltalk::takeWatch() {
 	return 0;
 }
 
-bool giveWatch(std::unique_ptr<Watch> &pWatch) {
+bool Smalltalk::giveWatch(std::unique_ptr<Watch> &pWatch) {
 	return true;
 }
 
