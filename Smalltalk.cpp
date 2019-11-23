@@ -23,7 +23,27 @@ Smalltalk::~Smalltalk(void) {
 }
 
 std::string Smalltalk::saySomething() {
-	return "Hello";
+	populatePhrases();
+
+	int size = mySmallTalk.size();
+
+	if (nationality == BRIT) {
+		int britCount = current_phrase%size;
+		current_phrase++;
+		return mySmallTalk[britCount];
+	}
+	if (nationality == AMERICAN) {
+		int americanCount = current_phrase%size;
+		current_phrase++;
+		return mySmallTalk[americanCount];
+	}
+	if (nationality == AMERICAN_DE) {
+		int donutCount = current_phrase%size;
+		current_phrase++;
+		return mySmallTalk[donutCount];
+	}
+
+	return "Are you sure you aren't Canadian?";
 }
 
 std::string Smalltalk::getTime() {
