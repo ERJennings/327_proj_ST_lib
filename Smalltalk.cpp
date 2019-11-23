@@ -27,7 +27,7 @@ std::string Smalltalk::saySomething() {
 }
 
 std::string Smalltalk::getTime() {
-	if (pWatch > 0) {
+	if (pWatch != 0) {
 		return pWatch->getTime();
 	}
 	else {
@@ -47,9 +47,12 @@ std::unique_ptr<Watch>  Smalltalk::takeWatch() {
 }
 
 bool Smalltalk::giveWatch(std::unique_ptr<Watch> &pWatch) {
-	return true;
+	if (this->pWatch != 0) {
+		return false;
+	}
+	else {
+		this->pWatch = std::move(pWatch);
+		return true;
+	}
+
 }
-
-//void populatePhrases() {
-
-//}
