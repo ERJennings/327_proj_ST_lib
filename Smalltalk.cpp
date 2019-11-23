@@ -2,7 +2,7 @@
  * Smalltalk.cpp
  *
  *  Created on: Nov 22, 2019
- *      Author: ejennings
+ *      Author: Eric Jennings
  */
 
 #include <string>
@@ -10,9 +10,9 @@
 #include <memory>
 #include <iostream>
 #include "./includes/Watch.h"
-#include "./includes/Smalltalk.h"
 #include "./includes/constants.h"
 #include "./includes/Functions.h"
+#include "./includes/Smalltalk.h"
 #include "./includes/Smalltalk_American.h"
 #include "./includes/ST_American_DonutEnthusiest.h"
 #include "./includes/Smalltalk_Brit.h"
@@ -37,11 +37,13 @@ std::string Smalltalk::saySomething() {
 		current_phrase++;
 		return mySmallTalk[britCount];
 	}
+
 	if (nationality == AMERICAN) {
 		int americanCount = current_phrase%size;
 		current_phrase++;
 		return mySmallTalk[americanCount];
 	}
+
 	if (nationality == AMERICAN_DE) {
 		int donutCount = current_phrase%size;
 		current_phrase++;
@@ -58,11 +60,11 @@ std::string Smalltalk::getTime(){
 	else {
 		return I_DO_NOT_HAVE_A_WATCH;
 	}
-
 }
 
 std::unique_ptr<Watch>  Smalltalk::takeWatch() {
 	std::unique_ptr<Watch> currentWatch;
+
 	if (pWatch != 0) {
 		currentWatch = 0;
 	}

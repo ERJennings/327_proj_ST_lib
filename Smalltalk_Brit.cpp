@@ -2,18 +2,18 @@
  * Smalltalk_Brit.cpp
  *
  *  Created on: Nov 22, 2019
- *      Author: ejennings
+ *      Author: Eric Jennings
  */
 
-#include "./includes/Smalltalk.h"
-#include "./includes/Smalltalk_Brit.h"
 #include <string>
 #include <vector>
 #include <memory>
+#include "./includes/Smalltalk.h"
+#include "./includes/Smalltalk_Brit.h"
 #include "./includes/Watch.h"
 #include "./includes/constants.h"
 
-Smalltalk_Brit::Smalltalk_Brit(int iPerson):Smalltalk(BRIT,iPerson){
+Smalltalk_Brit::Smalltalk_Brit(int iPerson):Smalltalk(BRIT, iPerson){
 
 }
 
