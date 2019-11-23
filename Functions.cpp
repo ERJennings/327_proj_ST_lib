@@ -10,6 +10,7 @@
 
 #include "./includes/Functions.h"
 #include "./includes/Smalltalk_American.h"
+#include "./includes/Smalltalk.h"
 #include "./includes/ST_American_DonutEnthusiest.h"
 #include "./includes/Smalltalk_Brit.h"
 #include "./includes/Watch.h"
@@ -44,8 +45,17 @@ std::vector<std::unique_ptr<Smalltalk>> getPeople(int numBrit,
 	}
 
 		//create some watches (as long as number watches <= numb people)
+	for (int i = 0; i < people.size() && numWatches > 0; i++) {
+		std::unique_ptr<Smalltalk> currentWatch(new Watch());
+		if(people[i]->giveWatch(currentWatch)) {
+			numWatches--;
+		}
+
+	}
 		//then give the watches away to first NUM_WATCHES people in the vector
+
 		// when you are finished using the vector you return
+
 		//from this function(see Smalltalk header for hints)
 
 		//return your vector
