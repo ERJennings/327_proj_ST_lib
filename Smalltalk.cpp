@@ -8,10 +8,10 @@
 #include <string>
 #include <vector>
 #include <memory>
+#include <iostream>
 #include "./includes/Watch.h"
 #include "./includes/Smalltalk.h"
 #include "./includes/constants.h"
-#include <iostream>
 #include "./includes/Functions.h"
 #include "./includes/Smalltalk_American.h"
 #include "./includes/ST_American_DonutEnthusiest.h"
@@ -51,14 +51,13 @@ std::string Smalltalk::saySomething() {
 	return "Are you sure you aren't Canadian?";
 }
 
-std::string Smalltalk::getTime() {
+std::string Smalltalk::getTime(){
 	if (pWatch != 0) {
 		return pWatch->getTime();
 	}
 	else {
 		return I_DO_NOT_HAVE_A_WATCH;
 	}
-
 
 }
 
@@ -68,7 +67,7 @@ std::unique_ptr<Watch>  Smalltalk::takeWatch() {
 		currentWatch = 0;
 	}
 
-	currentWatch = std::move(currentWatch);
+	currentWatch = std::move(pWatch);
 
 	return currentWatch;
 }
