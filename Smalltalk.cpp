@@ -11,6 +11,11 @@
 #include "./includes/Watch.h"
 #include "./includes/Smalltalk.h"
 #include "./includes/constants.h"
+#include <iostream>
+#include "./includes/Functions.h"
+#include "./includes/Smalltalk_American.h"
+#include "./includes/ST_American_DonutEnthusiest.h"
+#include "./includes/Smalltalk_Brit.h"
 
 using namespace std;
 
@@ -53,16 +58,18 @@ std::string Smalltalk::getTime() {
 	else {
 		return I_DO_NOT_HAVE_A_WATCH;
 	}
+
+
 }
 
 std::unique_ptr<Watch>  Smalltalk::takeWatch() {
 	std::unique_ptr<Watch> currentWatch;
-	if (pWatch == 0) {
-		currentWatch = std::move(currentWatch);
-	}
-	else {
+	if (pWatch != 0) {
 		currentWatch = 0;
 	}
+
+	currentWatch = std::move(currentWatch);
+
 	return currentWatch;
 }
 
