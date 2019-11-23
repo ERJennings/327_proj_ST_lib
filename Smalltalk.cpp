@@ -10,6 +10,7 @@
 #include <memory>
 #include "./includes/Watch.h"
 #include "./includes/Smalltalk.h"
+#include "./includes/constants.h"
 
 using namespace std;
 
@@ -26,11 +27,23 @@ std::string Smalltalk::saySomething() {
 }
 
 std::string Smalltalk::getTime() {
-	return "Time to get a watch";
+	if (pWatch > 0) {
+		return pWatch->getTime();
+	}
+	else {
+		return I_DO_NOT_HAVE_A_WATCH;
+	}
 }
 
 std::unique_ptr<Watch>  Smalltalk::takeWatch() {
-	return 0;
+	std::unique_ptr<Watch> currentWatch;
+	if (pWatch == 0) {
+		currentWatch = std::move(currentWatch);
+	}
+	else {
+		currentWatch = 0;
+	}
+	return currentWatch;
 }
 
 bool Smalltalk::giveWatch(std::unique_ptr<Watch> &pWatch) {
