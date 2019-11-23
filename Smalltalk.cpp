@@ -13,12 +13,8 @@
 
 using namespace std;
 
-Smalltalk::Smalltalk(std::string myNationality, int iPerson) {
-	const std::string nationality = myNationality;
-	//this->mySmallTalk = new std::vector<std::string>;
-	this->iPerson = iPerson;
-	this->current_phrase = 0;
-	this->pWatch = 0;
+Smalltalk::Smalltalk(std::string myNationality, int iPerson):nationality(myNationality), iPerson(iPerson), current_phrase(0) {
+
 }
 
 Smalltalk::~Smalltalk(void) {
